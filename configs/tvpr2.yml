@@ -1,6 +1,6 @@
 MODEL:
   PRETRAIN_CHOICE: 'imagenet'
-  PRETRAIN_PATH: '/data3/XT/pretrain/resnet50-19c8e357.pth'
+  PRETRAIN_PATH: '/data3/XT/logs/Reid-Baseline/tvpr2/resnet50_model_120.pth'
   LAST_STRIDE: 2
   NECK: 'no'
   METRIC_LOSS_TYPE: 'triplet'
@@ -16,16 +16,16 @@ INPUT:
   PADDING: 10
 
 DATASETS:
-  NAMES: ('market1501')
+  NAMES: ('tvpr2')
 
 DATALOADER:
   SAMPLER: 'softmax_triplet'
   NUM_INSTANCE: 4
-  NUM_WORKERS: 8l71
+  NUM_WORKERS: 8
 
 SOLVER:
   OPTIMIZER_NAME: 'Adam'
-  MAX_EPOCHS: 120
+  MAX_EPOCHS: 80
   BASE_LR: 0.00035
 
   CLUSTER_MARGIN: 0.3
@@ -62,6 +62,6 @@ TEST:
   NECK_FEAT: 'after'
   FEAT_NORM: 'yes'
 
-OUTPUT_DIR: "/data3/XT/logs/Reid-Baseline/baseine"
+OUTPUT_DIR: "/data3/XT/logs/Reid-Baseline/tvpr2_200"
 
 

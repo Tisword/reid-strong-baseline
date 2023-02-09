@@ -18,6 +18,8 @@ def read_image(img_path):
     while not got_img:
         try:
             img = Image.open(img_path).convert('RGB')
+            if img.width!=320 or img.height!=240:
+                print(img_path)
             got_img = True
         except IOError:
             print("IOError incurred when reading '{}'. Will redo. Don't worry. Just chill.".format(img_path))

@@ -79,7 +79,7 @@ class Market1501(BaseImageDataset):
             assert 0 <= pid <= 1501  # pid == 0 means background
             assert 1 <= camid <= 6
             camid -= 1  # index starts from 0
-            if relabel: pid = pid2label[pid]
+            if relabel: pid = pid2label[pid]   #将随机的行人id映射到0-750
             dataset.append((img_path, pid, camid))
 
         return dataset
